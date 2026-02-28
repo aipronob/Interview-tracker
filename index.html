@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" theme = light>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Tracker</title>
+
+  <!-- Google Font set up -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<!-- DaisyUI set up -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<style>
+ *{
+  font-family: "Outfit", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+
+</style>
+</head>
+<body   class="bg-base-200 justify-center mx-auto">
+
+  <section>
+
+    <h1 class="bg-green-200 font-bold " >Job Aplication Tracker</h1>
+    <div class="summary-bar flex gap-5 justify-between bg-green-100 border-2" >
+      <div class="total border-2 w-[400px] text-left">
+        <h1>Total</h1>
+        <span id="totaljobs" class="text-navy-300 font-bold">0</span>
+      </div>
+      <div class="interview border-2 w-[400px] text-left">
+        <h1>Interview</h1>
+        <span id="totalinterview" class="text-green-700 font-bold ">0</span>
+      </div>
+      <div class="rejected border-2 w-[400px] text-left">
+        <h1>Rejected</h1>
+        <span id="totalreject" class="text-red-700 font-bold">0</span>
+      </div>
+    </div>
+</section>
+
+
+
+<section class="midSection">
+  <div class="flex justify-between">
+  <h1>Available First Corp</h1>
+  <button class="btn btn-soft btn-primary w-[100px]">8 jobs</button>
+  </div>
+  <div>
+<button class="btn btn-soft btn-primary w-[100px]">All</button>
+<button class="btn btn-soft btn-primary w-[100px]">Interview</button>
+<button class="btn btn-soft btn-primary w-[100px]">Rejected</button>
+</div>
+</section>
+
+<section class="detail">
+  <div class="border-2">
+    <h1>Mobile First Corp</h1>
+    <h1>React Native Developer</h1>
+    <h1>Remote•Full-time•$130,000 - $175,000</h1>
+    <button class="btn btn-soft btn-primary w-[100px] text-black">Not Applied</button>
+    <h1>Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</h1>
+    <button id="interview1" class="btn btn-soft btn-primary w-[100px] text-green-500 border-green-500">Interview</button>
+    <button id="reject1" class="btn btn-soft btn-primary w-[100px] text-red-500 border-red-500">Reject</button>    
+  </div>
+
+    <div class="border-2">
+    <h1>WebFlow Agency</h1>
+    <h1>Web Designer & Developer</h1>
+    <h1>Los Angeles, CA • Part-time • $80,000 - $120,000</h1>
+    <button class="btn btn-soft btn-primary w-[100px] text-black">Not Applied</button>
+    <h1>Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</h1>
+    <button id="interview2"  class="btn btn-soft btn-primary w-[100px] text-green-500 border-green-500">Interview</button>
+    <button id="reject2" class="btn btn-soft btn-primary w-[100px] text-red-500 border-red-500">Reject</button>    
+  </div>
+
+   <div class="border-2">
+    <h1>DataViz Solutions</h1>
+    <h1>Data Visualization Specialist</h1>
+    <h1>Boston, MA • Full-time • $125,000 - $165,000</h1>
+    <button class="btn btn-soft btn-primary w-[100px] text-black">Not Applied</button>
+    <h1>Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</h1>
+    <button  id="interview3" class="btn btn-soft btn-primary w-[100px] text-green-500 border-green-500">Interview</button>
+    <button class="btn btn-soft btn-primary w-[100px] text-red-500 border-red-500">Reject</button>    
+  </div>
+
+     <div class="border-2">
+    <h1>CloudFirst Inc</h1>
+    <h1>Backend Developer</h1>
+    <h1>Seattle, WA • Full-time • $140,000 - $190,000</h1>
+    <button class="btn btn-soft btn-primary w-[100px] text-black">Not Applied</button>
+    <h1>Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</h1>
+    <button class="btn btn-soft btn-primary w-[100px] text-green-500 border-green-500">Interview</button>
+    <button class="btn btn-soft btn-primary w-[100px] text-red-500 border-red-500">Reject</button>    
+  </div>
+
+     <div class="border-2">
+    <h1>Innovation Labs</h1>
+    <h1>UI/UX Engineer</h1>
+    <h1>Austin, TX • Full-time • $110,000 - $150,000</h1>
+    <button class="btn btn-soft btn-primary w-[100px] text-black">Not Applied</button>
+    <h1>Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</h1>
+    <button class="btn btn-soft btn-primary w-[100px] text-green-500 border-green-500">Interview</button>
+    <button class="btn btn-soft btn-primary w-[100px] text-red-500 border-red-500">Reject</button>    
+  </div>
+
+    <div class="border-2">
+    <h1>MegaCorp Solutions</h1>
+    <h1>JavaScript Developer</h1>
+    <h1>New York, NY • Full-time • $130,000 - $170,00</h1>
+    <button class="btn btn-soft btn-primary w-[100px] text-black">Not Applied</button>
+    <h1>Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</h1>
+    <button class="btn btn-soft btn-primary w-[100px] text-green-500 border-green-500">Interview</button>
+    <button class="btn btn-soft btn-primary w-[100px] text-red-500 border-red-500">Reject</button>    
+  </div>
+
+    <div class="border-2">
+    <h1>StartupXYZ</h1>
+    <h1>Full Stack Engineer</h1>
+    <h1>Remote • Full-time • $120,000 - $160,000</h1>
+    <button class="btn btn-soft btn-primary w-[100px] text-black">Not Applied</button>
+    <h1>Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</h1>
+    <button class="btn btn-soft btn-primary w-[100px] text-green-500 border-green-500">Interview</button>
+    <button class="btn btn-soft btn-primary w-[100px] text-red-500 border-red-500">Reject</button>    
+  </div>
+
+      <div class="border-2">
+    <h1>TechCorp Industries</h1>
+    <h1>Senior Frontend Developer</h1>
+    <h1>San Francisco, CA • Full-time • $130,000 - $175,000</h1>
+    <button class="btn btn-soft btn-primary w-[100px] text-black">Not Applied</button>
+    <h1>We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</h1>
+    <button class="btn btn-soft btn-primary w-[100px] text-green-500 border-green-500">Interview</button>
+    <button class="btn btn-soft btn-primary w-[100px] text-red-500 border-red-500">Reject</button>    
+  </div>
+
+
+</section>
+
+
+
+<script src="./script/machine.js"></script>
+<script src="./script/script.js"></script>
+<script src="./script/interview.js"></script>
+<script src="./script/reject.js"></script>
+</body>
+</html>
