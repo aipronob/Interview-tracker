@@ -48,9 +48,10 @@ interviewButtons.forEach(function(button) {
             return;
         }
 
+
         if (statusBtn.innerText === "Interview") {
-            interviewCount = Math.max(0, rejectCount - 1);
-            rejectTotal.innerText = interviewCount;
+            interviewCount = Math.max(0, interviewCount - 1);
+            interviewTotal.innerText = interviewCount;
         }
 
         rejectCount++
