@@ -6,49 +6,60 @@ const rejectTotal = document.getElementById("totalreject");
 
 
 // INTERVIEW BUTTONS
-const interviewButtons = document.querySelectorAll(".interviewBtn"); // As ID dia ekta ekta dhora jay, onek interview button ase, tai queryselectorall use kora 
+const interviewButtons = document.querySelectorAll(".interviewBtn"); 
 
 interviewButtons.forEach(function(button) {
+
     button.addEventListener("click", function() {
+
+        const card = button.parentElement;
+        const statusBtn = card.querySelector("button");
+        if (statusBtn.innerText === "Interview") {
+            return;
+        }
+
+        if (statusBtn.innerText === "Rejected") {
+            rejectCount = Math.max(0, rejectCount - 1);
+            rejectTotal.innerText = rejectCount;
+        }
 
         interviewCount++;
         interviewTotal.innerText = interviewCount;
-        rejectCount --;
-        rejectTotal.innerText = rejectCount;
-        if (rejectCount = 0){
-          return;
-        }
-
-        // find status button inside same card
-        const card = button.parentElement;
-        const statusBtn = card.querySelector("button");
 
         statusBtn.innerText = "Interview";
-        statusBtn.classList.remove("text-black");
+        statusBtn.classList.remove("text-black", "text-red-600");
         statusBtn.classList.add("text-green-600");
 
     });
+
 });
 
 
 // Reject btn
-const rejectButtons = document.querySelectorAll(".rejectBtn"); // reject button gulo dhore rejectButtons e store
+   const rejectButtons= document.querySelectorAll(".rejectBtn");
 
-rejectButtons.forEach(function(button) {                       // ekta ekta kore dhre click function apply
+    rejectButtons.forEach(function(button) {
+
     button.addEventListener("click", function() {
-
-        rejectCount ++;
-        rejectTotal.innerText = rejectCount;
-        
-        interviewCount--;
-        interviewTotal.innerText = interviewCount;
 
         const card = button.parentElement;
         const statusBtn = card.querySelector("button");
+        if (statusBtn.innerText === "Reject"){
+            return;
+        }
 
-        statusBtn.innerText = "Rejected";
-        statusBtn.classList.remove("text-black");
+        if (statusBtn.innerText === "Interview") {
+            interviewCount = Math.max(0, rejectCount - 1);
+            rejectTotal.innerText = interviewCount;
+        }
+
+        rejectCount++
+       rejectTotal.innerText = rejectCount;
+
+        statusBtn.innerText = "Reject";
+        statusBtn.classList.remove("text-black", "text-green-600");
         statusBtn.classList.add("text-red-600");
 
     });
+
 });
